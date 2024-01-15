@@ -20,4 +20,11 @@ RUN echo "DirectoryIndex index.php index.html" >> /etc/apache2/apache2.conf
 RUN echo "upload_max_filesize = $SIZE_LIMIT" >> /usr/local/etc/php/php.ini
 RUN echo "post_max_size = $SIZE_LIMIT" >> /usr/local/etc/php/php.ini
 
+# Copy the custom theme into the WordPress themes directory
+# COPY path/to/your/theme/folder /var/www/html/wp-content/themes/theme-name
+
+# Copy the custom plugin into the WordPress themes directory
+COPY plugins /var/www/html/wp-content/plugins
+
+
 CMD ["apache2-foreground"]
