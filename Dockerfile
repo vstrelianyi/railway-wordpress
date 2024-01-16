@@ -24,7 +24,7 @@ RUN echo "post_max_size = $SIZE_LIMIT" >> /usr/local/etc/php/php.ini
 # COPY path/to/your/theme/folder /var/www/html/wp-content/themes/theme-name
 
 # Copy the custom plugin into the WordPress themes directory
-COPY /plugins /var/www/html/wp-content/plugins
+COPY /plugins/ /var/www/html/wp-content/plugins/
 
 
 CMD ["apache2-foreground"]
